@@ -11,7 +11,7 @@ The program simply outputs the string "hello world" to the terminal.
 
 Here is a demostration of the program in action:
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.loom.com/share/6ec339045de94422a297cc4caa8f338b)
 
 # Development Environment
 
