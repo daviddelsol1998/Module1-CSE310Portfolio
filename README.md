@@ -1,23 +1,25 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This repo contains multiple exploratory programming projects using the following languages:
+Python for general purpose programming, data analasys and game development.
+Kotilin for genegeneral purpose programming, and mobile development for android.
 
-{Provide a description of your software}
+These projects are inteded to explore the syntax of multiple languages and the posibilities available using different developement tools.
 
-{Describe your purpose for creating this software.}
+For the first project, and for testing purposes of this repo the program "hello world" is posted. 
+The program simply outputs the string "hello world" to the terminal.
 
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
+Here is a demostration of the program in action:
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used}
+For this program I am using IntelliJ as it is my preferred IDE, I am also using git for my version control integration.
+The program is written in Python3
 
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Python Syntax](https://www.w3schools.com/python/python_syntax.asp)
+* [What is hello world!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)
