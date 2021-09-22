@@ -1,12 +1,15 @@
 # Overview
 
-This repo contains multiple exploratory programming projects using the following languages:
-Python for general purpose programming, data analasys and game development.
-Kotilin for genegeneral purpose programming, and mobile development for android.
+This repo contains an exploratory programming project written using Python:
+The purpose of this program is to provide a desktop application that will help the user set up an automatic budget based the total income received each week. The program requests the user to input how much income was received then it records the answer in a txt file and display how much needs to be paid in tithing, how much will go to savings and then it will divide the remaining money into different categories so that there is a clearly defined budget for each category.
 
-These projects are inteded to explore the syntax of multiple languages and the posibilities available using different developement tools.
+The stretch part will be reading and writing from a file to show previous week’s budgets and also creating a decent software interface.
 
-For the first project, and for testing purposes of this repo the program "hello world" is posted. 
+These projects are inteded to explore the syntax of python including:
+Variables, Expressions, Conditionals, Loops, Functions, Classes, and Data structures (e.g. list, tuple, dict, or set).
+
+As for now the first project in the repo, for testing purposes is "hello world" and it is posted as "hello_world.py" at the root of the repository. 
+
 The program simply outputs the string "hello world" to the terminal.
 
 Here is a demostration of the program in action:
@@ -15,7 +18,7 @@ Here is a demostration of the program in action:
 
 # Development Environment
 
-For this program I am using IntelliJ as it is my preferred IDE, I am also using git for my version control integration.
+For this program I am using VS code as it is my preferred IDE, I am also using git for my version control integration.
 The program is written in Python3
 
 # Useful Websites
