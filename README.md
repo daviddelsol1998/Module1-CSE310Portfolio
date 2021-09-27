@@ -19,10 +19,9 @@ Here is a demostration of the program in action:
 # Development Environment
 
 For this program I am using VS code as it is my preferred IDE, I am also using git for my version control integration.
+The program relies on a virtual enviroment based on Python3 and some of the main functionality of the program is acomplished using the pandas library for ease of handling files.
 The program is written in Python3
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
 * [Python Syntax](https://www.w3schools.com/python/python_syntax.asp)
-* [What is hello world!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)
+* [Pandas Library Docs](https://pandas.pydata.org/docs/)
