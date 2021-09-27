@@ -1,6 +1,7 @@
 '''This module handles the user interface and all the information to be displayed
-to the user'''
+to the user, it relies on the date and os modules for some of its functionality.'''
 from datetime import date
+import os
 
 
 class UserInterface:
@@ -9,26 +10,39 @@ class UserInterface:
     new income.'''
 
     def __init__(self):
-        '''initializes the ui class
+        '''initializes the ui class, clears screen
         gets the current date and welcomes user'''
+        os.system('cls' if os.name == 'nt' else 'clear')
         self.current_date = date.today()
-        print(self.current_date)
-        print('Welcome to the budget manager')
+        print(f'Todays date: {self.current_date}')
+        print('Welcome to the budget manager' + '\n')
 
     def get_user(self):
         '''recieves user name as input to be used for file handling'''
-        self.user_name = input('What is your name:')
+        self.user_name = input('What is your name: ')
+        return self.user_name
 
-    def input_amount(self):
+    def get_amount(self):
         '''recives amount to be used for budget creation in float format'''
-        self.new_amount = input('Please input the amount here: $')
+        print('ONLY USE "." FOR CENTS IF NEEDED, DO NOT USE ","')
+        self.new_amount = float(input('Please input the amount here: $'))
+        return self.new_amount
 
-    def input_date(self):
+    def get_date(self):
         '''receives date to retrive previous budget in string format'''
-        print('USE THE FOLLOWING DATE FORMAT (MM/DD/YYYY)')
+        print('USE THE FOLLOWING DATE FORMAT MM/DD/YYYY')
         self.new_date = input(
-            'Please input the date of your reported income to see budget:')
+            'Please input the date of your reported income to see budget: ')
+        return self.new_date
 
-    def display_budget_header(self):
-        print(f'Todays date:{self.current_date}')
-        print(f'Budget of income received on: {self.new_date}')
+    def display_budget_header(self,new_date):
+        '''displays current date and budget of given date'''
+        print(f'Current date: {self.current_date}')
+        print(f'Budget of income received on: {new_date}')
+
+    def select_options(self):
+        '''ask user what to do'''
+        print('Press "P" to see a previous budget given based on the income date')
+        print('Press "B" to create a budget based on new income')
+        self.user_selection = input('What would you like to do?: ')
+        return self.user_selection
