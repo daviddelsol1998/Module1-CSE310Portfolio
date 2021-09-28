@@ -2,6 +2,7 @@
 in order to acomplish all these functions, the pandas library is used to read, create
 and update csv files with ease'''
 import pandas as pd  # library used to work with csv files
+from os.path import exists # used to see if a file exists.
 
 
 class FileManager:
@@ -24,3 +25,6 @@ class FileManager:
 
         df = pd.DataFrame(empty_file_format)
         df.to_csv(f'{self.file_given}.csv')
+
+    def file_exist(self):
+        return exists(f'{self.file_given}.csv')
