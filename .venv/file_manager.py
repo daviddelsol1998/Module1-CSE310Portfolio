@@ -7,7 +7,7 @@ import pandas as pd
 
 class FileManager:
     '''This class inherits base functionality from pandas library to work on csv files.
-    the class has 3 functions, to create, to read and to update files'''
+    the class has 4 functions, to check if a file exist, and if so to create, to read said file'''
 
     def __init__(self, file_given):
         '''this initializes the class with one argument (file name to work on)'''
@@ -25,3 +25,4 @@ class FileManager:
 
         df = pd.DataFrame(empty_file_format)
         df.to_csv(f'{self.file_given}.csv')
+        
