@@ -7,6 +7,7 @@ from file_manager import FileManager
 
 ui = UserInterface()
 fm = FileManager('David')
+print(fm.file_exist)
 
 
 

@@ -12,7 +12,7 @@ class UserInterface:
     def __init__(self):
         '''initializes the ui class, clears screen
         gets the current date and welcomes user'''
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear') # this clears the console
         self.current_date = date.today()
         print(f'Todays date: {self.current_date}')
         print('Welcome to the budget manager' + '\n')
