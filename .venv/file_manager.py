@@ -1,7 +1,7 @@
 '''This module handles all of the functionality of the file manager
 in order to acomplish all these functions, the pandas library is used to read, create
 and update csv files with ease'''
-import pandas as pd
+import pandas as pd  # library used to work with csv files
 
 
 class FileManager:
@@ -24,4 +24,3 @@ class FileManager:
 
         df = pd.DataFrame(empty_file_format)
         df.to_csv(f'{self.file_given}.csv')
-

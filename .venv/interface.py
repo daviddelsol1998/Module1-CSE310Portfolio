@@ -1,7 +1,7 @@
 '''This module handles the user interface and all the information to be displayed
 to the user, it relies on the date and os modules for some of its functionality.'''
-from datetime import date
-import os
+from datetime import date  # library used to get current date
+import os  # library used to clear screen at printing
 
 
 class UserInterface:
@@ -35,7 +35,7 @@ class UserInterface:
             'Please input the date of your reported income to see budget: ')
         return self.new_date
 
-    def display_budget_header(self,new_date):
+    def display_budget_header(self, new_date):
         '''displays current date and budget of given date'''
         print(f'Current date: {self.current_date}')
         print(f'Budget of income received on: {new_date}')
