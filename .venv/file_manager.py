@@ -7,10 +7,16 @@ from os.path import exists  # used to see if a file exists.
 
 class FileManager:
     '''This class inherits base functionality from pandas library to work on csv files.
-    the class has 4 functions, to check if a file exist, and if so to create, to read said file'''
+    argument required to initialize class FileManager(file_given): file given = username
+    the class has 4 functions, to 
+    1) create a filecheck: def create_file(),
+    2) check if a file exist: file_exist(), and if so 
+    3) read said file by date given to return budget: get_budget_by_date(date_given), 
+    4) update file with the following information:
+    def update_file(date_given, income_given, tithing_given, savings_given, spending_balance_given)'''
 
     def __init__(self, file_given):
-        '''this initializes the class with one argument (file name to work on)'''
+        '''this initializes the class with one argument (username)'''
         self.file_given = file_given
         self.file_format = {
             'date': [],
@@ -21,12 +27,14 @@ class FileManager:
         }
 
     def create_file(self):
-        '''this method is called to create a file if the file doesn't exist'''
+        '''this method is called to create a file with (file_given = username)
+        if the file doesn't exist'''
         df = pd.DataFrame(self.file_format)
         df.to_csv(f'{self.file_given}.csv')
 
     def file_exist(self):
-        '''this returns true or false whether a function exist or not'''
+        '''this returns true or false to indicate
+        whether a file exist or not'''
         return exists(f'{self.file_given}.csv')
 
     def update_file(self, date_given, income_given, tithing_given, savings_given, spending_balance_given):
@@ -41,3 +49,8 @@ class FileManager:
         df = pd.DataFrame.from_dict(self.file_format)
         df.to_csv(f'{self.file_given}.csv', mode='a',
                   index=False, header=False)
+
+    def get_budget_by_date(self, date_given):
+        budget = pd.read_csv(f'{self.file_given}.csv')
+        budget_by_date = budget['date'] = date_given
+        print(budget_by_date)
