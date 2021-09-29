@@ -7,10 +7,7 @@ from file_manager import FileManager
 
 ui = UserInterface()
 fm = FileManager('David')
-# fm.create_file()
-# fm.update_file('04/21/2021',1000,100,100,800)
 fm.get_budget_by_date('04/21/2021')
-
 
 
 

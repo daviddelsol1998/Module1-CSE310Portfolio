@@ -16,7 +16,7 @@ class FileManager:
     def update_file(date_given, income_given, tithing_given, savings_given, spending_balance_given)'''
 
     def __init__(self, file_given):
-        '''this initializes the class with one argument (username)'''
+        '''this initializes the class with one argument (username) to be used as file name'''
         self.file_given = file_given
         self.file_format = {
             'date': [],
@@ -47,10 +47,8 @@ class FileManager:
 
         # update file
         df = pd.DataFrame.from_dict(self.file_format)
-        df.to_csv(f'{self.file_given}.csv', mode='a',
-                  index=False, header=False)
+        df.to_csv(f'{self.file_given}.csv', mode='a', header=False)
 
     def get_budget_by_date(self, date_given):
         budget = pd.read_csv(f'{self.file_given}.csv')
-        budget_by_date = budget['date'] = date_given
-        print(budget_by_date)
+        print(budget[budget.date == date_given])
