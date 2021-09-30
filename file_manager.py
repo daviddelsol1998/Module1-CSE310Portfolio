@@ -9,14 +9,16 @@ class FileManager:
     '''This class inherits base functionality from pandas library to work on csv files.
     argument required to initialize class FileManager(file_given): file given = username
     the class has 4 functions, to 
-    1) create a filecheck: def create_file(),
-    2) check if a file exist: file_exist(), and if so 
-    3) read said file by date given to return budget: get_budget_by_date(date_given), 
-    4) update file with the following information:
-    def update_file(date_given, income_given, tithing_given, savings_given, spending_balance_given)'''
+    1) create_file(): create a csv file with (file_given = username), only to be called if file doesn't exist.
+    2) file_exist(): this returns true or false to indicate whether a file exist or not. 
+    3) get_budget_by_date(date_given): read said file by date given to return budget.
+    4) update_file(date_given, income_given, tithing_given, savings_given, spending_balance_given):
+    update file with the following information:
+    '''
 
     def __init__(self, file_given):
-        '''this initializes the class with one argument (username) to be used as file name'''
+        '''This initializes the class with one argument (username) to be used as file name.
+        it creates an empty file format that will be hold on file format attribute'''
         self.file_given = file_given
         self.file_format = {
             'date': [],
@@ -27,8 +29,7 @@ class FileManager:
         }
 
     def create_file(self):
-        '''this method is called to create a file with (file_given = username)
-        if the file doesn't exist'''
+        '''create a csv file with (file_given = username), only to be called if file doesn't exist.'''
         df = pd.DataFrame(self.file_format)
         df.index.name = 'Budget'
         df.to_csv(f'{self.file_given}.csv')
