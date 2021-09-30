@@ -67,6 +67,7 @@ while not done:
             ui.clear()  # clear screen
             print('\nA budget has already been generated today')
             print('Please upgrade to premium version for more than one budget per day')
+            input('Press any key to continue')
         else:
             # get amount to create
             new_income = ui.get_amount()
@@ -80,6 +81,7 @@ while not done:
             # display generated budget
             ui.display_budget_header(ui.current_date)
             fm.get_budget_by_date(current_day)
+            input('Press any key to continue')
     # handle check budget based on date
     elif user_choice == "P":
         # get date of the budget user would like to see
