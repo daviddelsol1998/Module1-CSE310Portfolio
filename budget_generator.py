@@ -23,5 +23,5 @@ class BudgetGenerator:
         self.budget['tithing'] = '${:,.2f}'.format(float(self.income_given)/10)
         self.budget['savings'] = '${:,.2f}'.format(float(self.income_given)/10)
         self.budget['spending'] = '${:,.2f}'.format(
-            float(self.income_given) - float(self.income_given)/10)
+            float(self.income_given) - (float(self.income_given)/10)*2)
         return self.budget
