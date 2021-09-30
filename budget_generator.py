@@ -2,10 +2,10 @@
 
 
 class BudgetGenerator:
-    '''This class has two functions
+    '''This class has only one metho
     1) to generate the budget based on income given as a parameter:
-    generate_budget()
-    2) to return the budget generated as a dictionary using:
+    generate_budget() which generates budget based on required arguments
+    and returns the budget generated as a dictionary using:
     return_budget()'''
 
     def __init__(self, income_given):
