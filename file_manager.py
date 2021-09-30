@@ -30,6 +30,7 @@ class FileManager:
         '''this method is called to create a file with (file_given = username)
         if the file doesn't exist'''
         df = pd.DataFrame(self.file_format)
+        df.index.name = 'Budget'
         df.to_csv(f'{self.file_given}.csv')
 
     def file_exist(self):
@@ -38,6 +39,8 @@ class FileManager:
         return exists(f'{self.file_given}.csv')
 
     def update_file(self, date_given, income_given, tithing_given, savings_given, spending_balance_given):
+        '''this method is used to update the contents of a file by adding the following information as 
+        parameters from the budget generator'''
         # update dictionary
         self.file_format['date'].append(date_given)
         self.file_format['income'].append(income_given)
@@ -50,5 +53,10 @@ class FileManager:
         df.to_csv(f'{self.file_given}.csv', mode='a', header=False)
 
     def get_budget_by_date(self, date_given):
+        '''This returns the budget from the csv file based on a date given as an argument'''
         budget = pd.read_csv(f'{self.file_given}.csv')
-        print(budget[budget.date == date_given])
+        # check if date exist
+        if date_given in budget.values:
+            print(budget[budget.date == date_given])
+        else:
+            print('date does not exist in file')
