@@ -8,12 +8,13 @@ from os.path import exists  # used to see if a file exists.
 class FileManager:
     '''This class inherits base functionality from pandas library to work on csv files.
     argument required to initialize class FileManager(file_given): file given = username
-    the class has 4 functions, to 
+    the class has 5 functions, to 
     1) create_file(): create a csv file with (file_given = username), only to be called if file doesn't exist.
     2) file_exist(): this returns true or false to indicate whether a file exist or not. 
     3) get_budget_by_date(date_given): read said file by date given to return budget.
     4) update_file(date_given, income_given, tithing_given, savings_given, spending_balance_given):
     update file with the following information:
+    5) read_file : just return file as pd format for values comparison
     '''
 
     def __init__(self, file_given):
@@ -58,6 +59,11 @@ class FileManager:
         budget = pd.read_csv(f'{self.file_given}.csv')
         # check if date exist
         if date_given in budget.values:
+            print('\n')
             print(budget[budget.date == date_given])
         else:
-            print('date does not exist in file')
+            print('\nDate does not exist in file')
+
+    def read_file(self):
+        '''just return file as pd format for values comparison'''
+        return pd.read_csv(f'{self.file_given}.csv')
