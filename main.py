@@ -47,6 +47,7 @@ while not real_user:
     else:
         print(f'\nWelcome {user}\n')
         real_user = True
+        input('Press any key to continue')
 
 # initialize file manager with real user
 fm = FileManager(user)
